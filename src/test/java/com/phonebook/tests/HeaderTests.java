@@ -9,30 +9,19 @@ public class HeaderTests extends TestBase{
     // в навигационной панели(логотип, HOME, ABOUT и LOGIN) dlja nesareg. pols. testit nalitschie etich knopok
 
     @Test
-    public void headerTests() {
+    public void logo() {
+         Assert.assertTrue(isElementPresent(By.xpath("//h1[text()='PHONEBOOK']")));
+    }
+    @Test
+    public void HOME() {
         Assert.assertTrue(isElementPresent(By.xpath("//a[@href='/home']")));
+    }
+    @Test
+    public void ABOUT() {
         Assert.assertTrue(isElementPresent(By.xpath("//a[@href='/about']")));
+    }
+    @Test
+    public void LOGIN() {
         Assert.assertTrue(isElementPresent(By.xpath("//a[@href='/login']")));
-        Assert.assertTrue(isElementPresent(By.xpath("//h1[text()='PHONEBOOK']")));
-    }
-
-
-
-
-
-
-
-
-    public boolean logo() {
-        return isElementPresent(By.xpath("//h1[text()='PHONEBOOK']"));
-    }
-    public boolean HOME() {
-        return isElementPresent(By.xpath("//a[@href='/home']"));
-    }
-    public boolean ABOUT() {
-        return isElementPresent(By.xpath("//a[@href='/about']"));
-    }
-    public boolean LOGIN() {
-        return isElementPresent(By.xpath("//a[@href='/login']"));
     }
 }
