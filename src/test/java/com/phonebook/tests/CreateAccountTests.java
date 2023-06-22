@@ -8,11 +8,11 @@ public class CreateAccountTests extends TestBase {
     //precondition:(predislowie) user should be logged out(rasloginen dolschen bitj polsowatelj)
     @BeforeMethod
     public void ensurePrecondition() {
-        if (!app.isLoginLinkPresent()) {     //esli etogo ne suschestwuet snatschit ti usche saloginilsa
-            app.clickOnLoginOutButton();
+        if (!app.getHeader().isLoginLinkPresent()) {     //esli etogo ne suschestwuet snatschit ti usche saloginilsa
+            app.getHeader().clickOnLoginOutButton();
         }
         //click Login link
-        app.clickOnLoginLink();     //saloginilisj click button Login metod click opisan nische
+        app.getHeader().clickOnLoginLink();     //saloginilisj click button Login metod click opisan nische
     }
 
     @Test
@@ -20,13 +20,13 @@ public class CreateAccountTests extends TestBase {
 
         //enter email field
         // enter password field
-        app.fillLoginRegistrationForm(new User().setEmail("alb@gmail.com").setPassword("12345Alb$"));
+        app.getUser().fillLoginRegistrationForm(new User().setEmail("alb@gmail.com").setPassword("12345Alb$"));
 
         //click on Registration
-        app.clickOnRegistrationButton();
+        app.getUser().clickOnRegistrationButton();
 
         //assert user logged in(check Sign out button displayed) kogda salogen to pojawlaetsa pole sign out
-        Assert.assertTrue(app.isAlertPresent());//pri wtorom prohode test prowalitsa potomuschto dwa rasa s odnimi i temi sce dannimi nelsa saregitsa
+        Assert.assertTrue(app.getUser().isAlertPresent());//pri wtorom prohode test prowalitsa potomuschto dwa rasa s odnimi i temi sce dannimi nelsa saregitsa
     }
 
 

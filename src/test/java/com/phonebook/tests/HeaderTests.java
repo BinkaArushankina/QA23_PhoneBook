@@ -9,29 +9,29 @@ public class HeaderTests extends TestBase{
     // в навигационной панели(логотип, HOME, ABOUT и LOGIN) dlja nesareg. pols. testit nalitschie etich knopok
     @BeforeMethod
     public void ensurePrecondition() {
-        if (!app.isLoginLinkPresent()) {
-            app.clickOnLoginOutButton();
+        if (!app.getHeader().isLoginLinkPresent()) {
+            app.getHeader().clickOnLoginOutButton();
         }
-        app.clickOnLoginLink();
+        app.getHeader().clickOnLoginLink();
     }
 
     @Test
     public void logo() {
-         Assert.assertTrue(app.isLogoPresent());
+         Assert.assertTrue(app.getHeader().isLogoPresent());
     }
 
     @Test
     public void HOME() {
-        Assert.assertTrue(app.isHomeLinkPresent());
+        Assert.assertTrue(app.getHeader().isHomeLinkPresent());
     }
 
     @Test
     public void ABOUT() {
-        Assert.assertTrue(app.isAboutLinkPresent());
+        Assert.assertTrue(app.getHeader().isAboutLinkPresent());
     }
 
     @Test
     public void LOGIN() {
-        Assert.assertTrue(app.isLoginLinkPresent());
+        Assert.assertTrue(app.getHeader().isLoginLinkPresent());
     }
 }
