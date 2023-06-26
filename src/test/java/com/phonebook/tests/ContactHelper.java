@@ -45,4 +45,14 @@ public class ContactHelper extends BaseHelper {
         }
         return false;
     }
+
+    public boolean isContactDeleted(String text) {
+        List<WebElement> contacts = driver.findElements(By.cssSelector("h2"));
+        for (WebElement element: contacts) {
+            if (element.getText().contains(text)) {//esli takoj elm estj, snatschit po kakoj-to pritschine ne udalilsa
+                return false;
+            }
+        }
+        return true;// esli ego net, snatschit on uspeschno udalen
+    }
 }
