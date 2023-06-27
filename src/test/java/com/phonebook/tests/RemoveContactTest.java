@@ -1,4 +1,6 @@
 package com.phonebook.tests;
+import com.phonebook.model.Contact;
+import com.phonebook.model.User;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -28,15 +30,23 @@ public class RemoveContactTest extends TestBase{
 
         app.getContact().clickOnSaveButton();
 
-        Assert.assertTrue(app.getContact().isContactCreated("Karl"));
-
-        app.getContact().removeContact();
     }
 
     @Test
     public void removeContactTest() {
 
-        Assert.assertTrue(app.getContact().isContactDeleted("Karl"));
+        int sizeBefore = app.getContact().sizeOfContacts();
+
+        app.getContact().removeContact();
+
+        app.getContact().pause(1000);
+
+        int sizeAfter = app.getContact().sizeOfContacts();
+
+        Assert.assertEquals(sizeAfter, sizeBefore-1);
+
+        //Assert.assertTrue(app.getContact().isContactDeleted("Karl"));
 
     }
+
 }

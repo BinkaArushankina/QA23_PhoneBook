@@ -1,4 +1,4 @@
-package com.phonebook.tests;
+package com.phonebook.fw;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -11,7 +11,7 @@ import java.time.Duration;
 public class ApplicationManager {//wremennoe nasled na basehelper tolko schtobi metodi tuda skinutj
     String browser;
 
-    WebDriver driver;
+    public WebDriver driver;
 
     UserHelper user;
     ContactHelper contact;
@@ -39,6 +39,8 @@ public class ApplicationManager {//wremennoe nasled na basehelper tolko schtobi 
     }
 
     public void init() {
+        System.err.close();//schtobi wse krasnoe wnisu w outpute ne otobraschalos
+
         if (browser.equalsIgnoreCase("chrome")) {
             driver = new ChromeDriver();//initialisazia metodow
         } else if (browser.equalsIgnoreCase("firefox")) {

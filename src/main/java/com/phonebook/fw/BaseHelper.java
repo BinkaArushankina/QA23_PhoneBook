@@ -1,4 +1,4 @@
-package com.phonebook.tests;
+package com.phonebook.fw;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -14,6 +14,13 @@ public class BaseHelper {
 
     public BaseHelper(WebDriver driver) {
         this.driver = driver;
+    }
+    public void pause(int millis) {
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public boolean isElementPresent(By locator) { //By class selenium locator peremennaja, ubiwersalnaja

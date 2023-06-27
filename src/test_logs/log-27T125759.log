@@ -1,0 +1,19 @@
+1573 [main] INFO  org.testng.internal.Utils -- [TestNG] Running:
+  C:\Users\AIT TR Student\AppData\Local\JetBrains\IdeaIC2022.2\temp-testng-customsuite.xml
+
+6052 [main] INFO  com.phonebook.tests.TestBase -- Start testaddContactFromCsvFilePositiveTestwith data: [ContactKarl1234567890]
+10102 [main] INFO  com.phonebook.tests.TestBase -- PASSED: addContactFromCsvFilePositiveTest
+10103 [main] INFO  com.phonebook.tests.TestBase -- Stop test
+10103 [main] INFO  com.phonebook.tests.TestBase -- ========================================================
+10108 [main] INFO  com.phonebook.tests.TestBase -- Start testaddContactFromCsvFilePositiveTestwith data: [ContactKarl12345678901]
+23821 [main] INFO  com.phonebook.tests.TestBase -- PASSED: addContactFromCsvFilePositiveTest
+23821 [main] INFO  com.phonebook.tests.TestBase -- Stop test
+23821 [main] INFO  com.phonebook.tests.TestBase -- ========================================================
+23823 [main] INFO  com.phonebook.tests.TestBase -- Start testaddContactFromCsvFilePositiveTestwith data: [ContactKarl12345678901234]
+36927 [main] INFO  com.phonebook.tests.TestBase -- PASSED: addContactFromCsvFilePositiveTest
+36927 [main] INFO  com.phonebook.tests.TestBase -- Stop test
+36927 [main] INFO  com.phonebook.tests.TestBase -- ========================================================
+36928 [main] INFO  com.phonebook.tests.TestBase -- Start testaddContactFromCsvFilePositiveTestwith data: [ContactKarl123456789012345]
+50452 [main] INFO  com.phonebook.tests.TestBase -- PASSED: addContactFromCsvFilePositiveTest
+50452 [main] INFO  com.phonebook.tests.TestBase -- Stop test
+50452 [main] INFO  com.phonebook.tests.TestBase -- ========================================================

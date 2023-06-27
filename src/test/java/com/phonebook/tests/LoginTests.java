@@ -1,5 +1,6 @@
 package com.phonebook.tests;
 
+import com.phonebook.model.User;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -14,7 +15,7 @@ public class LoginTests extends TestBase{
         app.getHeader().clickOnLoginLink();
     }
 
-    @Test
+    @Test(priority = 1)
     public void loginPositiveTest() {
 
         //enter email field

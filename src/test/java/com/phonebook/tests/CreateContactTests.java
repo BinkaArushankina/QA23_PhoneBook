@@ -1,5 +1,8 @@
 package com.phonebook.tests;
 
+import com.phonebook.fw.DataProviders;
+import com.phonebook.model.Contact;
+import com.phonebook.model.User;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -34,6 +37,16 @@ public class CreateContactTests extends TestBase{
         app.getContact().clickOnSaveButton();
         //assert the contact is added   h2 -> account
         Assert.assertTrue(app.getContact().isContactCreated("Karl"));//proweraem estj li takoj karl usche
+
+    }
+
+    @Test(dataProviderClass = DataProviders.class,dataProvider = "addContactFromCsvFile")//swaska s DataProvider
+    public void addContactFromCsvFilePositiveTest(Contact contact) {
+
+        app.getHeader().clickOnAddLink();
+        app.getContact().fillAddContactForm(contact);
+
+        app.getContact().clickOnSaveButton();
 
     }
 

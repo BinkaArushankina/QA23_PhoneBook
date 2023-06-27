@@ -1,4 +1,4 @@
-package com.phonebook.tests;
+package com.phonebook.model;
 
 public class Contact {
     private String name; 
@@ -60,5 +60,10 @@ public class Contact {
 
     public String getDesc() {
         return desc;
+    }
+
+    @Override
+    public String toString() {
+        return "Contact - Name: " + name +" Phone: " + phone ;
     }
 }
