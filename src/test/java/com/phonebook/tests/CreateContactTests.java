@@ -47,7 +47,17 @@ public class CreateContactTests extends TestBase{
         app.getContact().fillAddContactForm(contact);
 
         app.getContact().clickOnSaveButton();
+    }
 
+    @Test(dataProviderClass = DataProviders.class,dataProvider = "addNegativContactFromCsvFile")//swaska s DataProvider
+    public void addNegativContactFromCsvFilePositiveTest(Contact contact) {
+
+        app.getHeader().clickOnAddLink();
+        app.getContact().fillAddContactForm(contact);
+
+        app.getContact().clickOnSaveButton();
+
+        Assert.assertTrue(app.getUser().isAlertPresent());
     }
 
     @AfterMethod
@@ -56,3 +66,9 @@ public class CreateContactTests extends TestBase{
     }
 
 }
+/*Homework
+В классе DataProviders создайте, пожалуйста, еще один метод с аннотацией @DataProvider,
+который будет работать с табличкой
+В тестовом методе AddContactTests создайте, пожалуйсчта, еще один тестовый метод, который будет проверять
+реакцию аппликации на добавление контакта с неверными телефонными номерами
+Для запуска негативных тестов создайте, пожалуйста, специальный пакет в файле .xml*/
