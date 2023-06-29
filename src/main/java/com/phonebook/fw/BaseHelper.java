@@ -1,12 +1,12 @@
 package com.phonebook.fw;
 
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
+import com.google.common.io.Files;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 
 public class BaseHelper {
@@ -58,5 +58,19 @@ public class BaseHelper {
             alert.accept();//robot podtwerschdaet knopku ok na wspliwajuschem okne
             return true;
         }
+    }
+
+    public String takeScreenshot() {
+        File tmp = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);//wremennij fail
+
+        File screenshot = new File("screenshots/screen" + System.currentTimeMillis() + ".png");//postojannij fail
+
+        try {
+            Files.copy(tmp, screenshot);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        return  screenshot.getAbsolutePath();
     }
 }
