@@ -47,6 +47,7 @@ public class CreateContactTests extends TestBase{
         app.getContact().fillAddContactForm(contact);
 
         app.getContact().clickOnSaveButton();
+        app.getContact().removeContact();
     }
 
     @Test(dataProviderClass = DataProviders.class,dataProvider = "addNegativContactFromCsvFile")//swaska s DataProvider
@@ -60,10 +61,6 @@ public class CreateContactTests extends TestBase{
         Assert.assertTrue(app.getUser().isAlertPresent());
     }
 
-    @AfterMethod
-    public void tearDown() {
-        app.getContact().removeContact();
-    }
 
 }
 /*Homework
